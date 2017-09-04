@@ -1,9 +1,64 @@
-import React from 'react'
+import React, {Component} from 'react'
+import firebaseService from '../services/Firebase'
 
-const AquiSeNecesita = () => (
-  <div>
-    <h1>Aqui Se Necesita - Go Help!</h1>
-  </div>
-)
+class AquiSeNecesita extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      position: false,
+      receivers: []
+    }
+
+    this.watchPosition();
+  }
+
+  watchPosition() {
+    let options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    navigator.geolocation.watchPosition(this.updatePosition.bind(this), this.logPositionError, options);
+  }
+
+  updatePosition(position) {
+    console.log('Current Position:');
+    console.log(position);
+    this.setState({position: position});
+  }
+
+  logPositionError(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  componentWillMount(){
+    /* Create reference to messages in Firebase Database */
+    let receiversRef = firebaseService.database().ref('receivers').orderByKey().limitToLast(100);
+    receiversRef.on('child_added', snapshot => {
+      /* Update React state when message is added at Firebase Database */
+      let receiver = { text: snapshot.val(), id: snapshot.key };
+      this.setState((prevState) => {
+          return {receivers: prevState.receivers.concat(receiver)}
+        }
+      );
+    })
+  }
+
+  render() {
+
+    return (
+      <div>
+        <h1>Aqui Se Necesita - Go Help!</h1>
+        {
+          (this.props.coords)
+          ? <div>{JSON.stringify(this.state.coords)}</div>
+          : ''
+        }
+      </div>
+    )
+  }
+
+}
 
 export default AquiSeNecesita
