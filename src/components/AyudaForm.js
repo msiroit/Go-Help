@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AyudaForm = () => (
+const AyudaForm = (props) => (
   <form>
     <fieldset>
       <legend>Quien Necesita?</legend>
@@ -75,33 +75,33 @@ const AyudaForm = () => (
     <fieldset>
       <legend>Que Necesita?</legend>
       <div className="field">
+        <h2>ROPA</h2>
         <p className="control">
-          <h2>ROPA</h2>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-buzo" value="1"/>
             Buzo
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-vestido" value="1"/>
             Vestido
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-remera" value="1"/>
             Remera
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-pantalon" value="1"/>
             Pantalon
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-guantes" value="1"/>
             Guantes
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-gorro" value="1"/>
             Gorro
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="ropa-medias" value="1"/>
             Medias
           </label>
@@ -110,19 +110,19 @@ const AyudaForm = () => (
       <div className="field">
         <h2>COMIDA</h2>
         <p className="control">
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="comida-per" value="1"/>
             Perecedero
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="comida-noper" value="1"/>
             No Perecedero
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="comida-bebida-caliente" value="1"/>
             Bebida caliente
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="comida-bebida-fria" value="1"/>
             Bebida Fría
           </label>
@@ -132,19 +132,19 @@ const AyudaForm = () => (
       <div className="field">
         <h2>CAMA</h2>
         <p className="control">
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="cama-colchon" value="1"/>
             Colchón
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="cama-manta" value="1"/>
             Manta
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="cama-almohada" value="1"/>
             Almohada
           </label>
-          <label class="checkbox">
+          <label className="checkbox">
             <input type="checkbox" name="cama-carpa" value="1"/>
             Carpa
           </label>
@@ -152,7 +152,10 @@ const AyudaForm = () => (
       </div>
 
     </fieldset>
-    <button type="submit">GO</button>
+    <button
+      type="button"
+      onClick={props.handleSubmit}
+    >GO</button>
   </form>
 )
 
