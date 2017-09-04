@@ -2,157 +2,159 @@ import React from 'react'
 
 const AyudaForm = () => (
   <form>
-    <fieldset>
-      <legend>Quien Necesita?</legend>
+    <fieldset className="column is-9">
+      <legend>QUIEN NECESITA?</legend>
       <div className="field is-grouped">
-        <label className="label">Género</label>
+        <label className="label">&nbsp;Género &nbsp;</label>
         <div className="control">
           <label className="radio">
             <input type="radio" name="genero" value="masculino" />
-            Masculino
+            &nbsp;Masculino&nbsp;
           </label>
         </div>
         <div className="control">
           <label className="radio">
             <input type="radio" name="genero" value="femenino" />
-            Femenino
+            &nbsp;Femenino&nbsp;
           </label>
         </div>
       </div>
 
       <div className="field is-grouped">
-        <label className="label">Edad</label>
+        <label className="label">&nbsp;Edad&nbsp;</label>
         <div className="control">
           <label className="radio">
             <input type="radio" name="edad" value="bebe" />
-            Bebe
+            &nbsp;Bebe&nbsp;
           </label>
         </div>
         <div className="control">
           <label className="radio">
             <input type="radio" name="edad" value="nino" />
-            Niño
+            &nbsp;Niño&nbsp;
           </label>
         </div>
         <div className="control">
           <label className="radio">
             <input type="radio" name="edad" value="adolescente" />
-            Adolescente
+            &nbsp;Adolescente&nbsp;
           </label>
         </div>
         <div className="control">
           <label className="radio">
             <input type="radio" name="edad" value="Adulto" />
-            Adulto
+            &nbsp;Adulto&nbsp;
           </label>
         </div>
       </div>
 
 
       <div className="field is-grouped">
-        <label className="label">Cotextura</label>
+        <label className="label">&nbsp;Cotextura&nbsp;</label>
         <div className="control">
           <label className="radio">
             <input type="radio" name="contx" value="chica" />
-            Chica
+            &nbsp;Chica&nbsp;
           </label>
         </div>
         <div className="control">
           <label className="radio">
             <input type="radio" name="contx" value="mediana" />
-            Mediana
+            &nbsp;Mediana&nbsp;
           </label>
         </div>
         <div className="control">
           <label className="radio">
             <input type="radio" name="contx" value="robusta" />
-            Robusta
+            &nbsp;Robusta&nbsp;
           </label>
         </div>
       </div>
 
     </fieldset>
-    <fieldset>
-      <legend>Que Necesita?</legend>
+    <fieldset className="column is-9">
+      <legend>QUE NECESITA?</legend>
       <div className="field">
         <p className="control">
-          <h2>ROPA</h2>
+          <h2 className="label">&nbsp;ROPA&nbsp;</h2>
           <label class="checkbox">
             <input type="checkbox" name="ropa-buzo" value="1"/>
-            Buzo
+            &nbsp;Buzo&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="ropa-vestido" value="1"/>
-            Vestido
+            &nbsp;Vestido&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="ropa-remera" value="1"/>
-            Remera
+            &nbsp;Remera&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="ropa-pantalon" value="1"/>
-            Pantalon
+            &nbsp;Pantalon&nbsp;
           </label>
+		  <br/>
           <label class="checkbox">
             <input type="checkbox" name="ropa-guantes" value="1"/>
-            Guantes
+            &nbsp;Guantes&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="ropa-gorro" value="1"/>
-            Gorro
+            &nbsp;Gorro&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="ropa-medias" value="1"/>
-            Medias
+            &nbsp;Medias&nbsp;
           </label>
         </p>
       </div>
       <div className="field">
-        <h2>COMIDA</h2>
+        <h2 className="label">&nbsp;COMIDA&nbsp;</h2>
         <p className="control">
           <label class="checkbox">
             <input type="checkbox" name="comida-per" value="1"/>
-            Perecedero
+            &nbsp;Perecedero&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="comida-noper" value="1"/>
-            No Perecedero
+            &nbsp;No Perecedero&nbsp;
           </label>
+		  <br/>
           <label class="checkbox">
             <input type="checkbox" name="comida-bebida-caliente" value="1"/>
-            Bebida caliente
+            &nbsp;Bebida caliente&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="comida-bebida-fria" value="1"/>
-            Bebida Fría
+            &nbsp;Bebida Fría&nbsp;
           </label>
         </p>
       </div>
 
       <div className="field">
-        <h2>CAMA</h2>
+        <h2 className="label">&nbsp;CAMA&nbsp;</h2>
         <p className="control">
           <label class="checkbox">
             <input type="checkbox" name="cama-colchon" value="1"/>
-            Colchón
+            &nbsp;Colchón&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="cama-manta" value="1"/>
-            Manta
+            &nbsp;Manta&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="cama-almohada" value="1"/>
-            Almohada
+            &nbsp;Almohada&nbsp;
           </label>
           <label class="checkbox">
             <input type="checkbox" name="cama-carpa" value="1"/>
-            Carpa
+            &nbsp;Carpa&nbsp;
           </label>
         </p>
       </div>
 
     </fieldset>
-    <button type="submit">GO</button>
+    <button className="button is-primary is-large is-warning" type="submit">GO</button>
   </form>
 )
 
