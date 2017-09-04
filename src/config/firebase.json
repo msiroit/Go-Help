@@ -1,0 +1,6 @@
+{
+  "apiKey": "AIzaSyBI1fTj9HtY3cSMlNiRufAVfEy3wajY_9s",
+  "authDomain": "go-help.firebaseapp.com",
+  "databaseURL": "https://go-help.firebaseio.com",
+  "storageBucket": "go-help.appspot.com"
+}
