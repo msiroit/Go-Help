@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import firebaseService from '../services/Firebase'
+import gMap from '../img/g-map.png'
+
 
 class AquiSeNecesita extends Component {
   constructor(props) {
@@ -47,14 +49,14 @@ class AquiSeNecesita extends Component {
 
   render() {
 
+    let markers = [];
+
     return (
       <div>
         <h1>Aqui Se Necesita - Go Help!</h1>
-        {
-          (this.props.coords)
-          ? <div>{JSON.stringify(this.state.coords)}</div>
-          : ''
-        }
+
+        <img src={gMap} />
+
       </div>
     )
   }
