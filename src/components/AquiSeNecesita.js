@@ -53,7 +53,7 @@ class AquiSeNecesita extends Component {
 
     return (
       <div>
-        <h1>Aqui Se Necesita - Go Help!</h1>
+        <h1 className="paginaActual"><strong>Aqui Se Necesita - Go Help!</strong></h1>
 
         <img src={gMap} />
 

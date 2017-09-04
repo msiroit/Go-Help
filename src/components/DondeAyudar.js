@@ -26,7 +26,7 @@ class DondeAyudar extends Component {
   render() {
     return (
       <div>
-        <h1>Donde Ayudar - Go Help!</h1>
+        <h1 className="paginaActual"><strong>Donde Ayudar - Go Help!</strong></h1>
       </div>
     )
   }

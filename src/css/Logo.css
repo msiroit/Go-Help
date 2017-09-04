@@ -22,3 +22,9 @@ nav:not(.home) .button-asn,
 nav:not(.home) .button-da {
 	display: none;
 }
+.paginaActual{
+	display:block;
+	margin:10px auto;
+	text-align: center;
+}
+		
