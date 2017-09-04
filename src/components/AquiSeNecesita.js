@@ -1,17 +1,22 @@
 import React, {Component} from 'react'
 import firebaseService from '../services/Firebase'
 import gMap from '../img/g-map.png'
-
+import AyudaForm from './AyudaForm'
 
 class AquiSeNecesita extends Component {
   constructor(props) {
     super(props);
     this.state = {
       position: false,
-      receivers: []
+      receivers: [],
+      showForm: false
     }
 
     this.watchPosition();
+  }
+
+  handleMapClick() {
+    this.setState({showForm: true})
   }
 
   watchPosition() {
@@ -55,7 +60,14 @@ class AquiSeNecesita extends Component {
       <div>
         <h1 className="paginaActual"><strong>Aqui Se Necesita - Go Help!</strong></h1>
 
-        <img src={gMap} />
+        <img
+          onClick={this.handleMapClick.bind(this)}
+          src={gMap} />
+
+        {(this.state.showForm)
+          ? <AyudaForm />
+          :''
+        }
 
       </div>
     )
