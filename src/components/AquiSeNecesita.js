@@ -52,6 +52,27 @@ class AquiSeNecesita extends Component {
     })
   }
 
+  handleSubmit(e) {
+    const form = e.target.parentElement;
+    const inputs = form.querySelectorAll('input:checked');
+    let output = inputs.forEach(input => ({
+      "name": input.name,
+      "value": input.value
+    }));
+
+    const receiver = {
+      location: this.state.position,
+      timestamp: this.state.position.timestamp
+    };
+
+    console.warn(receiver);
+
+    firebaseService.database().ref('receivers').push(receiver);
+
+    this.setState({showForm: false});
+
+  }
+
   render() {
 
     let markers = [];
@@ -65,7 +86,7 @@ class AquiSeNecesita extends Component {
           src={gMap} />
 
         {(this.state.showForm)
-          ? <AyudaForm />
+          ? <AyudaForm handleSubmit={this.handleSubmit.bind(this) }/>
           :''
         }
 
